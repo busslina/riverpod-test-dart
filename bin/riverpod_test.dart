@@ -4,11 +4,10 @@ import 'package:riverpod_test/riverpod_test.dart';
 final cRef = ProviderContainer();
 
 void main(List<String> arguments) async {
-  // final cRef = ProviderContainer();
-  await test();
+  await _testMasterSlave();
 }
 
-Future<void> test() async {
+Future<void> _testMasterSlave() async {
   // (01) Printing slave values I
   {
     _printTest(1, 'Printing state values I');
@@ -58,7 +57,5 @@ void _invalidateMaster(Country country) =>
     cRef.invalidate(masterProvider(country));
 
 void _printTest(int number, [String? txt]) {
-  print('');
-  print('TEST -- $number${txt == null ? '' : ' -- $txt'}');
-  print('');
+  print('\nTEST -- $number${txt == null ? '' : ' -- $txt'}\n');
 }
