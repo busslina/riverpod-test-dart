@@ -1,11 +1,12 @@
 import 'package:riverpod_test/riverpod_test.dart';
-import 'package:riverpod_test/core/providers.dart';
 
 import 'package:riverpod/riverpod.dart';
 
+import 'providers.dart';
+
 final cRef = ProviderContainer();
 
-Future<void> testMasterSlave() async {
+Future<void> main() async {
   // (01) Printing slave values I
   {
     printTestStep(1, 'Printing state values I');
