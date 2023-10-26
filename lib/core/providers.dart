@@ -23,13 +23,24 @@ int _slaveOneIndex = 0;
 @Riverpod(keepAlive: true)
 class Master extends _$Master {
   int _buildCount = 0;
+  int _listenersCount = 1;
 
   @override
   Object build(Country country) {
-    print('Master.build() -- $country -- Count: ${_buildCount++}');
+    print('Master.build() -- $country -- Build count: ${_buildCount++}');
 
     ref.onDispose(() {
       print('Master -- ON DISPOSE -- $country');
+    });
+
+    ref.onAddListener(() {
+      print('Master -- $country -- Listeners count: ${++_listenersCount}');
+      _listenersCount++;
+    });
+
+    ref.onRemoveListener(() {
+      print('Master -- $country -- Listeners count: ${--_listenersCount}');
+      _listenersCount++;
     });
 
     return Object();

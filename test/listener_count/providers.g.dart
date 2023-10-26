@@ -6,7 +6,7 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$masterHash() => r'03bde954d690be475ccab617d7bc2937b6a220c8';
+String _$masterHash() => r'62f0e7489c9b769436adc8fb79fa4afabd823a78';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -178,49 +178,49 @@ class _MasterProviderElement extends NotifierProviderElement<Master, Object>
   Country get country => (origin as MasterProvider).country;
 }
 
-String _$slaveOneHash() => r'a4971379bf0803ab88cd13f93c4017ca8b7dd2e8';
+String _$slaveHash() => r'e2ae81479803de8b100ab4a042b920e7495f25ad';
 
-abstract class _$SlaveOne extends BuildlessNotifier<int> {
+abstract class _$Slave extends BuildlessNotifier<DateTime> {
   late final Country country;
   late final President president;
 
-  int build(
+  DateTime build(
     Country country,
     President president,
   );
 }
 
-/// 02 - Slave one.
+/// 02 - Slave.
 ///
-/// Copied from [SlaveOne].
-@ProviderFor(SlaveOne)
-const slaveOneProvider = SlaveOneFamily();
+/// Copied from [Slave].
+@ProviderFor(Slave)
+const slaveProvider = SlaveFamily();
 
-/// 02 - Slave one.
+/// 02 - Slave.
 ///
-/// Copied from [SlaveOne].
-class SlaveOneFamily extends Family<int> {
-  /// 02 - Slave one.
+/// Copied from [Slave].
+class SlaveFamily extends Family<DateTime> {
+  /// 02 - Slave.
   ///
-  /// Copied from [SlaveOne].
-  const SlaveOneFamily();
+  /// Copied from [Slave].
+  const SlaveFamily();
 
-  /// 02 - Slave one.
+  /// 02 - Slave.
   ///
-  /// Copied from [SlaveOne].
-  SlaveOneProvider call(
+  /// Copied from [Slave].
+  SlaveProvider call(
     Country country,
     President president,
   ) {
-    return SlaveOneProvider(
+    return SlaveProvider(
       country,
       president,
     );
   }
 
   @override
-  SlaveOneProvider getProviderOverride(
-    covariant SlaveOneProvider provider,
+  SlaveProvider getProviderOverride(
+    covariant SlaveProvider provider,
   ) {
     return call(
       provider.country,
@@ -240,36 +240,36 @@ class SlaveOneFamily extends Family<int> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'slaveOneProvider';
+  String? get name => r'slaveProvider';
 }
 
-/// 02 - Slave one.
+/// 02 - Slave.
 ///
-/// Copied from [SlaveOne].
-class SlaveOneProvider extends NotifierProviderImpl<SlaveOne, int> {
-  /// 02 - Slave one.
+/// Copied from [Slave].
+class SlaveProvider extends NotifierProviderImpl<Slave, DateTime> {
+  /// 02 - Slave.
   ///
-  /// Copied from [SlaveOne].
-  SlaveOneProvider(
+  /// Copied from [Slave].
+  SlaveProvider(
     Country country,
     President president,
   ) : this._internal(
-          () => SlaveOne()
+          () => Slave()
             ..country = country
             ..president = president,
-          from: slaveOneProvider,
-          name: r'slaveOneProvider',
+          from: slaveProvider,
+          name: r'slaveProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$slaveOneHash,
-          dependencies: SlaveOneFamily._dependencies,
-          allTransitiveDependencies: SlaveOneFamily._allTransitiveDependencies,
+                  : _$slaveHash,
+          dependencies: SlaveFamily._dependencies,
+          allTransitiveDependencies: SlaveFamily._allTransitiveDependencies,
           country: country,
           president: president,
         );
 
-  SlaveOneProvider._internal(
+  SlaveProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -284,8 +284,8 @@ class SlaveOneProvider extends NotifierProviderImpl<SlaveOne, int> {
   final President president;
 
   @override
-  int runNotifierBuild(
-    covariant SlaveOne notifier,
+  DateTime runNotifierBuild(
+    covariant Slave notifier,
   ) {
     return notifier.build(
       country,
@@ -294,10 +294,10 @@ class SlaveOneProvider extends NotifierProviderImpl<SlaveOne, int> {
   }
 
   @override
-  Override overrideWith(SlaveOne Function() create) {
+  Override overrideWith(Slave Function() create) {
     return ProviderOverride(
       origin: this,
-      override: SlaveOneProvider._internal(
+      override: SlaveProvider._internal(
         () => create()
           ..country = country
           ..president = president,
@@ -313,13 +313,13 @@ class SlaveOneProvider extends NotifierProviderImpl<SlaveOne, int> {
   }
 
   @override
-  NotifierProviderElement<SlaveOne, int> createElement() {
-    return _SlaveOneProviderElement(this);
+  NotifierProviderElement<Slave, DateTime> createElement() {
+    return _SlaveProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is SlaveOneProvider &&
+    return other is SlaveProvider &&
         other.country == country &&
         other.president == president;
   }
@@ -334,7 +334,7 @@ class SlaveOneProvider extends NotifierProviderImpl<SlaveOne, int> {
   }
 }
 
-mixin SlaveOneRef on NotifierProviderRef<int> {
+mixin SlaveRef on NotifierProviderRef<DateTime> {
   /// The parameter `country` of this provider.
   Country get country;
 
@@ -342,188 +342,14 @@ mixin SlaveOneRef on NotifierProviderRef<int> {
   President get president;
 }
 
-class _SlaveOneProviderElement extends NotifierProviderElement<SlaveOne, int>
-    with SlaveOneRef {
-  _SlaveOneProviderElement(super.provider);
+class _SlaveProviderElement extends NotifierProviderElement<Slave, DateTime>
+    with SlaveRef {
+  _SlaveProviderElement(super.provider);
 
   @override
-  Country get country => (origin as SlaveOneProvider).country;
+  Country get country => (origin as SlaveProvider).country;
   @override
-  President get president => (origin as SlaveOneProvider).president;
-}
-
-String _$slaveTwoHash() => r'4702a404fd3202e3981dafacc750aa3ab247db68';
-
-abstract class _$SlaveTwo extends BuildlessNotifier<DateTime> {
-  late final Country country;
-  late final Region region;
-
-  DateTime build(
-    Country country,
-    Region region,
-  );
-}
-
-/// 03 - Slave two.
-///
-/// Copied from [SlaveTwo].
-@ProviderFor(SlaveTwo)
-const slaveTwoProvider = SlaveTwoFamily();
-
-/// 03 - Slave two.
-///
-/// Copied from [SlaveTwo].
-class SlaveTwoFamily extends Family<DateTime> {
-  /// 03 - Slave two.
-  ///
-  /// Copied from [SlaveTwo].
-  const SlaveTwoFamily();
-
-  /// 03 - Slave two.
-  ///
-  /// Copied from [SlaveTwo].
-  SlaveTwoProvider call(
-    Country country,
-    Region region,
-  ) {
-    return SlaveTwoProvider(
-      country,
-      region,
-    );
-  }
-
-  @override
-  SlaveTwoProvider getProviderOverride(
-    covariant SlaveTwoProvider provider,
-  ) {
-    return call(
-      provider.country,
-      provider.region,
-    );
-  }
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'slaveTwoProvider';
-}
-
-/// 03 - Slave two.
-///
-/// Copied from [SlaveTwo].
-class SlaveTwoProvider extends NotifierProviderImpl<SlaveTwo, DateTime> {
-  /// 03 - Slave two.
-  ///
-  /// Copied from [SlaveTwo].
-  SlaveTwoProvider(
-    Country country,
-    Region region,
-  ) : this._internal(
-          () => SlaveTwo()
-            ..country = country
-            ..region = region,
-          from: slaveTwoProvider,
-          name: r'slaveTwoProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$slaveTwoHash,
-          dependencies: SlaveTwoFamily._dependencies,
-          allTransitiveDependencies: SlaveTwoFamily._allTransitiveDependencies,
-          country: country,
-          region: region,
-        );
-
-  SlaveTwoProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.country,
-    required this.region,
-  }) : super.internal();
-
-  final Country country;
-  final Region region;
-
-  @override
-  DateTime runNotifierBuild(
-    covariant SlaveTwo notifier,
-  ) {
-    return notifier.build(
-      country,
-      region,
-    );
-  }
-
-  @override
-  Override overrideWith(SlaveTwo Function() create) {
-    return ProviderOverride(
-      origin: this,
-      override: SlaveTwoProvider._internal(
-        () => create()
-          ..country = country
-          ..region = region,
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        country: country,
-        region: region,
-      ),
-    );
-  }
-
-  @override
-  NotifierProviderElement<SlaveTwo, DateTime> createElement() {
-    return _SlaveTwoProviderElement(this);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return other is SlaveTwoProvider &&
-        other.country == country &&
-        other.region == region;
-  }
-
-  @override
-  int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, country.hashCode);
-    hash = _SystemHash.combine(hash, region.hashCode);
-
-    return _SystemHash.finish(hash);
-  }
-}
-
-mixin SlaveTwoRef on NotifierProviderRef<DateTime> {
-  /// The parameter `country` of this provider.
-  Country get country;
-
-  /// The parameter `region` of this provider.
-  Region get region;
-}
-
-class _SlaveTwoProviderElement
-    extends NotifierProviderElement<SlaveTwo, DateTime> with SlaveTwoRef {
-  _SlaveTwoProviderElement(super.provider);
-
-  @override
-  Country get country => (origin as SlaveTwoProvider).country;
-  @override
-  Region get region => (origin as SlaveTwoProvider).region;
+  President get president => (origin as SlaveProvider).president;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
