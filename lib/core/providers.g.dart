@@ -6,7 +6,7 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$masterHash() => r'f8a3e2c8fb341e883e20cb3cc316957b93d6c15f';
+String _$masterHash() => r'ae88bfc89acd3b38592977ddefe7e13315e626b8';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,10 +29,10 @@ class _SystemHash {
   }
 }
 
-abstract class _$Master extends BuildlessNotifier<dynamic> {
+abstract class _$Master extends BuildlessNotifier<Object> {
   late final Country country;
 
-  dynamic build(
+  Object build(
     Country country,
   );
 }
@@ -46,7 +46,7 @@ const masterProvider = MasterFamily();
 /// 01 - Master.
 ///
 /// Copied from [Master].
-class MasterFamily extends Family<dynamic> {
+class MasterFamily extends Family<Object> {
   /// 01 - Master.
   ///
   /// Copied from [Master].
@@ -90,7 +90,7 @@ class MasterFamily extends Family<dynamic> {
 /// 01 - Master.
 ///
 /// Copied from [Master].
-class MasterProvider extends NotifierProviderImpl<Master, dynamic> {
+class MasterProvider extends NotifierProviderImpl<Master, Object> {
   /// 01 - Master.
   ///
   /// Copied from [Master].
@@ -122,7 +122,7 @@ class MasterProvider extends NotifierProviderImpl<Master, dynamic> {
   final Country country;
 
   @override
-  dynamic runNotifierBuild(
+  Object runNotifierBuild(
     covariant Master notifier,
   ) {
     return notifier.build(
@@ -147,7 +147,7 @@ class MasterProvider extends NotifierProviderImpl<Master, dynamic> {
   }
 
   @override
-  NotifierProviderElement<Master, dynamic> createElement() {
+  NotifierProviderElement<Master, Object> createElement() {
     return _MasterProviderElement(this);
   }
 
@@ -165,12 +165,12 @@ class MasterProvider extends NotifierProviderImpl<Master, dynamic> {
   }
 }
 
-mixin MasterRef on NotifierProviderRef<dynamic> {
+mixin MasterRef on NotifierProviderRef<Object> {
   /// The parameter `country` of this provider.
   Country get country;
 }
 
-class _MasterProviderElement extends NotifierProviderElement<Master, dynamic>
+class _MasterProviderElement extends NotifierProviderElement<Master, Object>
     with MasterRef {
   _MasterProviderElement(super.provider);
 
@@ -178,7 +178,7 @@ class _MasterProviderElement extends NotifierProviderElement<Master, dynamic>
   Country get country => (origin as MasterProvider).country;
 }
 
-String _$slaveOneHash() => r'a8aa72e99b5f2ef8036e7a0f9194ad5962f68743';
+String _$slaveOneHash() => r'a4971379bf0803ab88cd13f93c4017ca8b7dd2e8';
 
 abstract class _$SlaveOne extends BuildlessNotifier<int> {
   late final Country country;
@@ -352,7 +352,7 @@ class _SlaveOneProviderElement extends NotifierProviderElement<SlaveOne, int>
   President get president => (origin as SlaveOneProvider).president;
 }
 
-String _$slaveTwoHash() => r'abe9745dc01c953c12027b1614a3950c03a4772d';
+String _$slaveTwoHash() => r'4702a404fd3202e3981dafacc750aa3ab247db68';
 
 abstract class _$SlaveTwo extends BuildlessNotifier<DateTime> {
   late final Country country;

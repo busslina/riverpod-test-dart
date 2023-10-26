@@ -25,10 +25,14 @@ class Master extends _$Master {
   int _buildCount = 0;
 
   @override
-  dynamic build(Country country) {
+  Object build(Country country) {
     print('Master.build() -- $country -- Count: ${_buildCount++}');
 
-    return null;
+    ref.onDispose(() {
+      print('Master -- ON DISPOSE -- $country');
+    });
+
+    return Object();
   }
 }
 
@@ -41,6 +45,10 @@ class SlaveOne extends _$SlaveOne {
   int build(Country country, President president) {
     print(
         'SlaveOne.build() -- $country, $president -- Count: ${_buildCount++}');
+
+    ref.onDispose(() {
+      print('SlaveOne -- ON DISPOSE -- $country, $president');
+    });
 
     ref.watch(masterProvider(country));
 
@@ -56,6 +64,10 @@ class SlaveTwo extends _$SlaveTwo {
   @override
   DateTime build(Country country, Region region) {
     print('SlaveTwo.build() -- $country, $region -- Count: ${_buildCount++}');
+
+    ref.onDispose(() {
+      print('SlaveTwo -- ON DISPOSE -- $country, $region');
+    });
 
     ref.watch(masterProvider(country));
 
