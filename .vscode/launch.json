@@ -8,7 +8,7 @@
             "name": "riverpod_test",
             "request": "launch",
             "type": "dart",
-            "program": "bin/riverpod_test.dart"
+            "program": "lib/unexpected_behavior/main.dart"
         }
     ]
 }
